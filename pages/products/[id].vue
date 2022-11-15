@@ -1,11 +1,19 @@
 <template>
   <div>
-    <h1>{{ id }}</h1>
-    <p>{{ data.title }}</p>
+    <ProductDetails :product="data" />
   </div>
 </template>
 
 <script setup>
 const { id } = useRoute().params
-const { data } = await useFetch(`https://fakestoreapi.com/products/${id}`, { key: id })
+const { data } = await useFetch(`https://fakestoreapi.com/products/${id}`, {
+  key: id,
+})
+if (!data.value) {
+  throw createError({
+    statusCode: 404,
+    statusMessage: 'Product not found!',
+    fatal: true,
+  })
+}
 </script>
