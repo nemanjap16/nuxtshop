@@ -68,7 +68,12 @@
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+useHead({
+  title: "Shoppingo | Home page",
+  meta: [{name: "description", content: "Shoppingo index page"}]
+})
+</script>
 
 <style>
 .hero {
