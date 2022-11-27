@@ -70,8 +70,8 @@
 
 <script setup>
 useHead({
-  title: "Shoppingo | Home page",
-  meta: [{name: "description", content: "Shoppingo index page"}]
+  title: 'Shoppingo | Home page',
+  meta: [{ name: 'description', content: 'Shoppingo index page' }],
 })
 </script>
 

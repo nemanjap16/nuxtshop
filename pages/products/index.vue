@@ -7,7 +7,8 @@
 </template>
 
 <script setup>
-const { data } = await useFetch('https://fakestoreapi.com/products')
+const { baseURL } = useRuntimeConfig()
+const { data } = await useFetch(baseURL)
 </script>
 
 <style scoped></style>

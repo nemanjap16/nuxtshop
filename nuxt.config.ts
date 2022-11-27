@@ -20,4 +20,14 @@ export default defineNuxtConfig({
       meta: [{ name: 'description', content: 'Shoppingo web store.' }],
     },
   },
+  runtimeConfig: {
+    // expose to server routes
+    apiKey: process.env.API_KEY,
+    serverURL: 'https://fakestoreapi.com/products',
+
+    // expose to frontend
+    public: {
+      baseURL: 'https://fakestoreapi.com/products',
+    },
+  },
 })

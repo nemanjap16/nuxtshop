@@ -10,9 +10,9 @@
 
 <script setup>
 const { id } = useRoute().params
-const uri = 'https://fakestoreapi.com/products'
+const { baseURL } = useRuntimeConfig()
 
-const { data } = await useFetch(`${uri}/${id}`, { key: id })
+const { data } = await useFetch(`${baseURL}/${id}`, { key: id })
 
 if (!data.value) {
   throw createError({
